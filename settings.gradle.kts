@@ -13,5 +13,7 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "zoopi"
-include (":app")
+include (":presentation")
 
+include(":domain")
+include(":data")
