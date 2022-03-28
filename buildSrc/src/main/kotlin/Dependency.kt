@@ -46,6 +46,7 @@ object Dependency {
         const val COMPOSE_TEST = "androidx.compose.ui:ui-test-junit4:${Versions.COMPOSE}"
         const val COMPOSE_UI_TOOL = "androidx.compose.ui:ui-tooling:${Versions.COMPOSE}"
         const val COMPOSE_NAV = "androidx.navigation:navigation-compose:${Versions.NAV}"
+        const val COMPOSE_ANI_NAV = "com.google.accompanist:accompanist-navigation-animation:${Versions.ANI_NAV}"
     }
 
     object Libraries {

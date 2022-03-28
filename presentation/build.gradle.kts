@@ -92,6 +92,7 @@ dependencies {
     implementation(Dependency.Google.COMPOSE_PREVIEW)
     implementation(Dependency.Google.COMPOSE_UI)
     implementation(Dependency.Google.COMPOSE_NAV)
+    implementation(Dependency.Google.COMPOSE_ANI_NAV)
 
     androidTestImplementation(Dependency.Google.COMPOSE_TEST)
     debugImplementation(Dependency.Google.COMPOSE_UI_TOOL)
