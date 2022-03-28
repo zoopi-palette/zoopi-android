@@ -257,7 +257,7 @@ fun Caption2(
         onTextLayout = onTextLayout,
     )
 }
-@Preview
+@Preview(name = "zoopi Text Style")
 @Composable
 fun TextPreview() {
     Column(modifier = Modifier.background(Color.White)) {
