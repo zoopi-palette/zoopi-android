@@ -1,4 +1,4 @@
-package com.palette.zoopi
+package com.palette.zoopi.ui.main
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
