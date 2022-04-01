@@ -18,7 +18,7 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.sp
 import com.palette.zoopi.R
 
-private val spoqa = FontFamily(
+val spoqa = FontFamily(
     Font(R.font.spoqa_bold, weight = FontWeight.Bold),
     Font(R.font.spoqa_regular, weight = FontWeight.Normal)
 )
