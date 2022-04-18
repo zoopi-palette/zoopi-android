@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Color.Companion.Yellow
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
@@ -20,6 +21,8 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.palette.zoopi.R
 import com.palette.zoopi.component.CustomIconButton
+import com.palette.zoopi.ui.theme.NaverGreen
+import com.palette.zoopi.ui.theme.Yellow
 
 @Composable
 fun SignInContainer(
@@ -63,10 +66,10 @@ fun SignInButtons(
         Surface(modifier = Modifier.padding(horizontal = 16.dp)) {
             CustomIconButton(
                 icon = painterResource(id = R.drawable.ic_logo_kakao),
-                iconColor = Color(0xFF191919),
-                buttonColor = Color(0xFFFEE500),
+                iconColor = Color.Black,
+                buttonColor = Yellow,
                 text = "카카오로 시작하기",
-                textColor = Color(0xFF191919),
+                textColor = Color.Black,
                 onClick = kakaoBtnClick
             )
         }
@@ -77,7 +80,7 @@ fun SignInButtons(
             CustomIconButton(
                 icon = painterResource(id = R.drawable.ic_logo_naver),
                 iconColor = Color.White,
-                buttonColor = Color(0xFF03C75A),
+                buttonColor = NaverGreen,
                 text = "네이버로 시작하기",
                 textColor = Color.White,
                 onClick = naverBtnClick
