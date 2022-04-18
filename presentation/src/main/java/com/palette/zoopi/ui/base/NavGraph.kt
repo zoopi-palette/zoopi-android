@@ -10,6 +10,9 @@ import com.google.accompanist.navigation.animation.composable
 import com.google.accompanist.navigation.animation.navigation
 import com.palette.zoopi.ui.signUp.SignUpAuthenticatePhone
 import com.palette.zoopi.ui.signUp.SignUpEmailPassword
+import androidx.navigation.compose.composable
+import androidx.navigation.navigation
+import com.palette.zoopi.ui.signIn.SignInContainer
 import com.palette.zoopi.ui.theme.Header
 
 // Authentication View Graph
@@ -25,7 +28,7 @@ fun NavGraphBuilder.authenticationGraph(navController: NavController) {
         }
         //Sign In Screen
         composable(route = NavGroup.Authentication.SIGN_IN) {
-
+            SignInContainer(navController)
         }
         //Sign up Email Password Step
         composable(NavGroup.Authentication.SIGN_UP_EMAIL_PASSWORD,
