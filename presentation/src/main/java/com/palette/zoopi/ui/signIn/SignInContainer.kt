@@ -6,6 +6,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
+import androidx.compose.material.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -85,14 +86,15 @@ fun SignInButtons(
 
         Spacer(modifier = Modifier.size(40.dp))
 
-        Text(
-            text = "아직 회원이 아니신가요?",
-            modifier = Modifier
-                .fillMaxWidth()
-                .clickable { signUpBtnClick() },
-            textAlign = TextAlign.Center,
-            textDecoration = TextDecoration.Underline,
-        )
+        TextButton(
+            onClick = signUpBtnClick
+        ) {
+            Text(
+                text = "아직 회원이 아니신가요?",
+                textAlign = TextAlign.Center,
+                textDecoration = TextDecoration.Underline,
+            )
+        }
     }
 }
 
