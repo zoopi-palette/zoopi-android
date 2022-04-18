@@ -18,11 +18,10 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.navigation
+import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
-import com.palette.zoopi.component.ZoopiTextField
 import com.palette.zoopi.ui.base.NavGroup
 import com.palette.zoopi.ui.base.authenticationGraph
-import com.palette.zoopi.ui.theme.Header
 import com.palette.zoopi.ui.theme.ZoopiTheme
 
 class MainActivity : ComponentActivity() {
@@ -45,7 +44,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun ZoopiApp() {
     val navController: NavHostController = rememberAnimatedNavController()
-    NavHost(navController = navController, startDestination = NavGroup.Authentication.group) {
+    AnimatedNavHost(navController = navController, startDestination = NavGroup.Authentication.group) {
         // Authentication Group
         authenticationGraph(navController = navController)
     }
