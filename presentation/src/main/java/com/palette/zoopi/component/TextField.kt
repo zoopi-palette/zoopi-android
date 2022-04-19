@@ -39,8 +39,10 @@ fun ZoopiTextField(
     value: String,
     error: String? = null,
     isPassword: Boolean = false,
+    resetButtonVisible: Boolean = true,
     keyboardType: KeyboardType = KeyboardType.Text,
     imeAction: ImeAction = ImeAction.Default,
+    onClick: (() -> Unit)? = null,
     onValueChange: (String) -> Unit
 ) {
     var focused by remember {
@@ -53,7 +55,7 @@ fun ZoopiTextField(
         mutableStateOf(false)
     }
     Column(
-        modifier = modifier
+        modifier = if (onClick != null) modifier.clickable(onClick = onClick) else modifier
     ) {
         Row(
             modifier = Modifier.fillMaxWidth()
@@ -85,13 +87,14 @@ fun ZoopiTextField(
                         keyboardType = keyboardType,
                         imeAction = imeAction
                     ),
-                    visualTransformation = if(!passwordVisible && isPassword) PasswordVisualTransformation() else VisualTransformation.None
+                    visualTransformation = if (!passwordVisible && isPassword) PasswordVisualTransformation() else VisualTransformation.None,
+                    enabled = onClick == null
                 )
             }
             Spacer(modifier = Modifier.weight(1f))
-            if(isPassword) {
+            if (isPassword) {
                 Image(
-                    imageVector = if(passwordVisible) Icons.Filled.Star else Icons.Outlined.Clear,
+                    imageVector = if (passwordVisible) Icons.Filled.Star else Icons.Outlined.Clear,
                     modifier = Modifier
                         .clickable(
                             interactionSource = interactionSource,
@@ -99,21 +102,23 @@ fun ZoopiTextField(
                         ) {
                             passwordVisible = !passwordVisible
                         }
-                        .alpha(if(value.isNotEmpty()) 1f else 0f)
+                        .alpha(if (value.isNotEmpty()) 1f else 0f)
                         .padding(end = 14.dp),
                     contentDescription = "비밀번호 토글"
                 )
             }
-            Image(
-                modifier = Modifier
-                    .clickable(
-                        interactionSource = interactionSource,
-                        indication = null
-                    ) { onValueChange("") },
-                painter = painterResource(id = R.drawable.all_input_close),
-                contentDescription = stringResource(id = R.string.input_close),
-                alpha = if (value.isNotEmpty()) 1f else 0f
-            )
+            if (resetButtonVisible) {
+                Image(
+                    modifier = Modifier
+                        .clickable(
+                            interactionSource = interactionSource,
+                            indication = null
+                        ) { onValueChange("") },
+                    painter = painterResource(id = R.drawable.all_input_close),
+                    contentDescription = stringResource(id = R.string.input_close),
+                    alpha = if (value.isNotEmpty()) 1f else 0f
+                )
+            }
         }
         Divider(
             modifier = Modifier
@@ -121,7 +126,7 @@ fun ZoopiTextField(
                 .offset(y = (-4).dp),
             color = if (focused) Grey90 else Grey30
         )
-        if(error != null) {
+        if (error != null) {
             Caption2(
                 modifier = Modifier.padding(top = 2.dp),
                 text = error,
