@@ -17,9 +17,11 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import androidx.navigation.NavGraph
 import androidx.navigation.compose.rememberNavController
 import com.palette.zoopi.R
 import com.palette.zoopi.component.CustomIconButton
+import com.palette.zoopi.ui.base.NavGroup
 import com.palette.zoopi.ui.theme.Grey60
 import com.palette.zoopi.ui.theme.NaverGreen
 
@@ -47,7 +49,7 @@ fun IntroScreen(
                 .padding(bottom = 72.dp),
             kakaoBtnClick = { TODO("카카오로 로그인") },
             naverBtnClick = { TODO("네이버로 로그인") },
-            signUpBtnClick = { TODO("회원가입 페이지로 이동") }
+            signUpBtnClick = { navController.navigate(NavGroup.Authentication.SIGN_UP_EMAIL_PASSWORD) }
         )
     }
 }
