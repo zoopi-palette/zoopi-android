@@ -19,15 +19,15 @@ import com.palette.zoopi.ui.theme.Header
 @OptIn(ExperimentalAnimationApi::class)
 fun NavGraphBuilder.authenticationGraph(navController: NavController) {
     navigation(
-        startDestination = NavGroup.Authentication.SIGN_UP_EMAIL_PASSWORD,
+        startDestination = NavGroup.Authentication.AUTH_HOME,
         route = NavGroup.Authentication.group
     ) {
         //Authentication Home Screen
-        composable(route = NavGroup.Authentication.AUTH_HOME) {
+        composable(route = NavGroup.Authentication.AUTH_HOME, enterTransition = null) {
             Header(text = "Hello Zoopi")
         }
         //Sign In Screen
-        composable(route = NavGroup.Authentication.SIGN_IN) {
+        composable(route = NavGroup.Authentication.SIGN_IN, enterTransition = null) {
             SignInContainer(navController)
         }
         //Sign up Email Password Step
