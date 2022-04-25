@@ -12,6 +12,7 @@ import com.palette.zoopi.ui.signUp.SignUpAuthenticatePhone
 import com.palette.zoopi.ui.signUp.SignUpEmailPassword
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
+import com.palette.zoopi.ui.intro.IntroScreen
 import com.palette.zoopi.ui.signIn.SignInContainer
 import com.palette.zoopi.ui.theme.Header
 
@@ -24,11 +25,11 @@ fun NavGraphBuilder.authenticationGraph(navController: NavController) {
     ) {
         //Authentication Home Screen
         composable(route = NavGroup.Authentication.AUTH_HOME, enterTransition = null) {
-            Header(text = "Hello Zoopi")
+            IntroScreen(navController = navController)
         }
         //Sign In Screen
         composable(route = NavGroup.Authentication.SIGN_IN, enterTransition = null) {
-            SignInContainer(navController)
+            SignInContainer(navController = navController)
         }
         //Sign up Email Password Step
         composable(NavGroup.Authentication.SIGN_UP_EMAIL_PASSWORD,
