@@ -2,7 +2,7 @@ package com.palette.zoopi.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Main1: Color = Color(0xFFea332c)
+val Main1: Color = Color(0xFFFF3E3D)
 val Main2: Color = Color(0xFFEA3A81)
 val Main3: Color = Color(0xFFFF3E3D)
 val Sub: Color = Color(0xFF3B91F5)

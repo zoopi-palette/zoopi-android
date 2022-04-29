@@ -4,4 +4,11 @@
     <string name="input_close">내용 초기화</string>
     <string name="email">이메일</string>
     <string name="password">비밀번호</string>
+
+    <string name="next">다음</string>
+    <string name="previous">이전</string>
+    <string name="select_wire_service">통신사 선택</string>
+    <string name="phone_number">핸드폰 번호</string>
+    <string name="verification_code">인증번호</string>
+    <string name="name">이름</string>
 </resources>
