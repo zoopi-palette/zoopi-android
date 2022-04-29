@@ -4,6 +4,7 @@
     <string name="input_close">내용 초기화</string>
     <string name="email">이메일</string>
     <string name="password">비밀번호</string>
+    <string name="input_password">비밀번호 입력</string>
 
     <string name="next">다음</string>
     <string name="previous">이전</string>
