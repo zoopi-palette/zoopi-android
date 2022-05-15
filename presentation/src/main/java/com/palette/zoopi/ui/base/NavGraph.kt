@@ -29,7 +29,13 @@ fun NavGraphBuilder.authenticationGraph(navController: NavController) {
         }
         //Sign In Screen
         composable(route = NavGroup.Authentication.SIGN_IN, enterTransition = null) {
-            SignInContainer(navController = navController)
+            SignInContainer(
+                toPrevious = {
+                    navController.popBackStack()
+                },
+                toNextStep = {
+                }
+            )
         }
         //Sign up Email Password Step
         composable(NavGroup.Authentication.SIGN_UP_EMAIL_PASSWORD,

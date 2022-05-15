@@ -3,6 +3,7 @@ package com.palette.zoopi.ui.intro
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.material.TextButton
@@ -17,13 +18,12 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import androidx.navigation.NavGraph
 import androidx.navigation.compose.rememberNavController
 import com.palette.zoopi.R
 import com.palette.zoopi.component.CustomIconButton
+import com.palette.zoopi.component.RectangleStrokeButton
 import com.palette.zoopi.ui.base.NavGroup
-import com.palette.zoopi.ui.theme.Grey60
-import com.palette.zoopi.ui.theme.NaverGreen
+import com.palette.zoopi.ui.theme.*
 
 @Composable
 fun IntroScreen(
@@ -41,54 +41,69 @@ fun IntroScreen(
             modifier = Modifier
                 .padding(top = 120.dp)
         )
+        
+        Spacer(modifier = Modifier.weight(1f))
 
         SignInButtons(
-            modifier = Modifier
-                .fillMaxSize()
-                .wrapContentSize(Alignment.BottomCenter)
-                .padding(bottom = 72.dp),
-            kakaoBtnClick = { TODO("카카오로 로그인") },
-            naverBtnClick = { TODO("네이버로 로그인") },
+            signInKakaoBtnClick = { TODO("카카오로 로그인") },
+            signInNaverBtnClick = { TODO("네이버로 로그인") },
+            signInEmailBtnClick = { navController.navigate(NavGroup.Authentication.SIGN_IN) },
             signUpBtnClick = { navController.navigate(NavGroup.Authentication.SIGN_UP_EMAIL_PASSWORD) }
         )
+
+        Spacer(modifier = Modifier.height(72.dp))
     }
 }
 
 @Composable
 fun SignInButtons(
-    modifier: Modifier,
-    kakaoBtnClick: () -> Unit,
-    naverBtnClick: () -> Unit,
+    signInKakaoBtnClick: () -> Unit,
+    signInNaverBtnClick: () -> Unit,
+    signInEmailBtnClick: () -> Unit,
     signUpBtnClick: () -> Unit
 ) {
     Column(
-        modifier = modifier
+        modifier = Modifier.padding(horizontal = 16.dp)
     ) {
-        Surface(modifier = Modifier.padding(horizontal = 16.dp)) {
-            CustomIconButton(
-                icon = painterResource(id = R.drawable.ic_logo_kakao),
-                iconColor = Color.Black,
-                buttonColor = Yellow,
-                text = "카카오로 시작하기",
-                textColor = Color.Black,
-                onClick = kakaoBtnClick
-            )
+        CustomIconButton(
+            icon = painterResource(id = R.drawable.ic_logo_kakao),
+            iconColor = Color.Black,
+            buttonColor = Yellow,
+            text = "카카오로 시작하기",
+            textColor = Color.Black,
+        ) {
+            signInKakaoBtnClick()
         }
 
-        Spacer(modifier = Modifier.size(8.dp))
+        Spacer(modifier = Modifier.height(8.dp))
 
-        Surface(modifier = Modifier.padding(horizontal = 16.dp)) {
-            CustomIconButton(
-                icon = painterResource(id = R.drawable.ic_logo_naver),
-                iconColor = Color.White,
-                buttonColor = NaverGreen,
-                text = "네이버로 시작하기",
-                textColor = Color.White,
-                onClick = naverBtnClick
+        CustomIconButton(
+            icon = painterResource(id = R.drawable.ic_logo_naver),
+            iconColor = Color.White,
+            buttonColor = NaverGreen,
+            text = "네이버로 시작하기",
+            textColor = Color.White,
+        ) {
+            signInNaverBtnClick()
+        }
+        
+        Spacer(modifier = Modifier.height(8.dp))
+
+        RectangleStrokeButton(
+            modifier = Modifier.height(48.dp),
+            text = "이메일로 로그인",
+            textColor = Grey50,
+            strokeBorder = 1.dp,
+            roundBorder = 12.dp,
+            borderStrokeColor = Grey30,
+            buttonColors = ButtonDefaults.buttonColors(
+                backgroundColor = Grey10
             )
+        ) {
+            signInEmailBtnClick()
         }
 
-        Spacer(modifier = Modifier.size(40.dp))
+        Spacer(modifier = Modifier.height(40.dp))
 
         TextButton(
             onClick = signUpBtnClick,

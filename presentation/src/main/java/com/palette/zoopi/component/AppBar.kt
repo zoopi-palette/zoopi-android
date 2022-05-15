@@ -16,15 +16,13 @@ fun AppBar(
     Column {
         Spacer(modifier = Modifier.height(34.dp))
 
-        Surface(
-            modifier = Modifier.padding(start = 19.dp)
-        ) {
+        Surface{
             BackButton(onClick = onBackBtnClick)
         }
 
         Spacer(modifier = Modifier.height(36.dp))
 
-        Header(text = text, modifier = Modifier.padding(start = 24.dp))
+        Header(text = text)
     }
 }
 
