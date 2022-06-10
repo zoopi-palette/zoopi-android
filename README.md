@@ -10,7 +10,7 @@
 - **Clean Architecture**  지향
 
 - **Architecture**
-    - MVVM
+    - MVVM, MVI
 
 -   **Language**
     - 100% Kotlin
