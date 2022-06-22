@@ -1,6 +1,11 @@
 # 🍀zoopi-android
 반려동물 헌혈 관리 서비스 Zoopi 입니다.
 
+## 애플리케이션 그래프 모델
+<p align="center">
+    <img src="https://developer.android.com/topic/libraries/architecture/images/final-architecture.png?authuser=1&hl=ko" width=600px/>
+</p>
+
 ## 📚  기술스택
 
 - **Minimum SDK Version** 26
