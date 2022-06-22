@@ -29,5 +29,5 @@
     - Coroutine
 
 -   **사용한 라이브러리**
-    - Jetpack Compose
+    - <ins>**Jetpack Compose**</ins>
     - Room, Retrofit, Gson, Glide, Jetpack AAC, Jetpack Hilt
